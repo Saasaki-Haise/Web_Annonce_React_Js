@@ -1,13 +1,11 @@
 // Import Dependence
-import React from 'react';
-import Logout from './Logout';
-
+import React, { useState } from 'react';
 // Import Component
+import Logout from './Logout';
 
 
 const Profil = () => {
-
-
+    const [userSession, setUserSession] = uUeState(null);
 
     return(
             <div>
@@ -18,4 +16,5 @@ const Profil = () => {
 }
 
 export default Profil;
+
 
