@@ -2,8 +2,9 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FirebaseContext } from '../component/Firebase';
 
-const Signup = () => {
+const Signup = (props) => {
     const data = {
+        name:'',
         email: '',
         password: '',
         confirmPassword: ''
@@ -18,10 +19,17 @@ const Signup = () => {
     // Envoi du formulaire
     const handleSubmit = e => {
             e.preventDefault();
-            const { email, password } = loginData;
+            const { email, password,name } = loginData;
             firebase.signupUser(email, password)
-            .then(user => {
+            .then(authUser => { 
+                return firebase.user(authUser.user.uid).set({
+                    name,
+                    email
+                })
+             })
+            .then( () => {
                 setLoginData({...data});
+                props.history.push('/Login');
             })
             .catch(error => {
                 setError(error);
@@ -41,6 +49,11 @@ const Signup = () => {
                     <h1 className='align'>Inscription</h1>
                             {errorMsg}
                         <form onSubmit={handleSubmit}>
+
+                        <div className='inputBox'>
+                                <label htmlFor='name'>Name</label>
+                                <input type="text" onChange={handleChange} className="form-control" id="name" required />
+                            </div>
                             
                             <div className='inputBox'>
                                 <label htmlFor='Email'>Email</label>

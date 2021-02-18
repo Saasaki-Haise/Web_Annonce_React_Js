@@ -9,13 +9,13 @@ function Acceuil() {
         <div className='container'>
             <SeachSection/>
         <h1>Annonces</h1>
-        <Annonces>Titi</Annonces>
-        <Annonces>Rex</Annonces>
-        <Annonces>Toto</Annonces>
-        <Annonces>Oto</Annonces>
-        <Annonces>Riki</Annonces>
-        <Annonces>Zozo</Annonces>
-        <Annonces>Juju</Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
+        <Annonces></Annonces>
         </div>
     )
 }

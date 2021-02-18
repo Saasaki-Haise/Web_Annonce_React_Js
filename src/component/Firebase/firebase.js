@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore' ;
 
 // Configuration de FireBase
 const config = {
@@ -15,6 +16,7 @@ class Firebase {
     constructor() {
         app.initializeApp(config);
         this.auth = app.auth();
+        this.db = app.firestore();
     }
 
     // Inscription
@@ -28,6 +30,8 @@ class Firebase {
     // Deconnexion
     signoutUser = () => this.auth.signOut();
 
+    // Cloud Firestore 
+    user  =  uid =>  this.db.doc(`users/${uid}`);
 }
 
 export default Firebase;

@@ -36,9 +36,9 @@ nav {
 
 /* LOADER */
 .loader {
-  border: 10px solid var(--light-grey-color);
+  border: 10px solid silver;
   border-radius: 50%;
-  border-top: 10px solid var(--dark-red-color);
+  border-top: 10px solid red;
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
